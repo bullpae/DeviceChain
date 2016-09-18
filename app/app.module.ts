@@ -7,6 +7,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home.component';
 import {AboutComponent} from './about.component';
+import {BlockComponent} from './block.component';
 import {CatService} from './cat.service';
 
 import {enableProdMode} from '@angular/core';
@@ -14,6 +15,7 @@ enableProdMode();
 
 const routing = RouterModule.forRoot([
     { path: '',      component: HomeComponent },
+    { path: 'block', component: BlockComponent },
     { path: 'about', component: AboutComponent }
 ]);
 

@@ -10,14 +10,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
+var router_1 = require('@angular/router');
+var http_1 = require('@angular/http');
+var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
+var home_component_1 = require('./home.component');
+var about_component_1 = require('./about.component');
+var block_component_1 = require('./block.component');
+var cat_service_1 = require('./cat.service');
+var core_2 = require('@angular/core');
+core_2.enableProdMode();
+var routing = router_1.RouterModule.forRoot([
+    { path: '', component: home_component_1.HomeComponent },
+    { path: 'block', component: block_component_1.BlockComponent },
+    { path: 'about', component: about_component_1.AboutComponent }
+]);
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule],
-            declarations: [app_component_1.AppComponent],
+            imports: [platform_browser_1.BrowserModule,
+                routing,
+                http_1.HttpModule,
+                forms_1.FormsModule,
+                forms_1.ReactiveFormsModule],
+            declarations: [app_component_1.AppComponent,
+                about_component_1.AboutComponent,
+                home_component_1.HomeComponent],
+            providers: [cat_service_1.CatService],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
